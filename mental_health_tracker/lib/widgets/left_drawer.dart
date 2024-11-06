@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_tracker/menu.dart';
+import 'package:mental_health_tracker/moodentry_form.dart';
 // TODO: Impor halaman MoodEntryFormPage jika sudah dibuat
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,33 @@ class LeftDrawer extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            // TODO: Bagian drawer header
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            child: const Column(
+              children: [
+                Text(
+                  'Mental Health Tracker',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(8)),
+                Text(
+                  "Ayo jaga kesehatan mentalmu setiap hari disini!",
+                  textAlign: TextAlign.center,
+  style: TextStyle(
+    fontSize: 15,
+    color: Colors.white,
+    fontWeight: FontWeight.normal,
+  ),
+                  // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+                ),
+              ],
+            ),
           ),
           ListTile(
             leading: const Icon(Icons.home_outlined),
@@ -31,11 +58,13 @@ class LeftDrawer extends StatelessWidget {
             title: const Text('Tambah Mood'),
             // Bagian redirection ke MoodEntryFormPage
             onTap: () {
-              /*
-              TODO: Buatlah routing ke MoodEntryFormPage di sini,
-              setelah halaman MoodEntryFormPage sudah dibuat.
-              */
-            },
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (context) => MoodEntryFormPage(),
+    ),
+  );
+},
           ),
         ],
       ),
