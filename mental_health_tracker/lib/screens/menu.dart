@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_tracker/widgets/left_drawer.dart';
 import 'package:mental_health_tracker/screens/moodentry_form.dart';
 import 'package:mental_health_tracker/widgets/mood_card.dart';
-// Impor drawer widget
-import 'package:mental_health_tracker/widgets/left_drawer.dart';
+
 
 class MyHomePage extends StatelessWidget {
     final String npm = '2306210393'; // NPM
@@ -20,7 +20,6 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
         // Judul aplikasi "Mental Health Tracker" dengan teks putih dan tebal.
         title: const Text(
           'Mental Health Tracker',
@@ -31,6 +30,7 @@ class MyHomePage extends StatelessWidget {
         ),
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: const LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
